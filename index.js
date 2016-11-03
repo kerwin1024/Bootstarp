@@ -7,10 +7,13 @@ var app = express();
 //handlebars 视图引擎及目录，视图文件扩展名
 var handlebars = require('express-handlebars');
 handlebars({
+    
     //默认布局为main
     defaultLayout: 'main',
+    
     //设置模板引擎文件后缀为.hbs
     extname: '.hbs',
+    
     //创建一个Handlebars辅助函数，给出一个静态资源的链接
     helpers: {
         static: function (name) {
@@ -30,17 +33,21 @@ app.set('view engine', 'hbs');
 
 //引入fs
 var fs = require('fs');
+
 //引入body-parser解析表单
 // app.use(require('body-parser')());
 var bodyParser = require('body-parser');    //老师的
+
 //path
 var path = require('path');
+
 //serve-favicon站点图标
 var favicon = require('serve-favicon');
 app.use(favicon(path.join(__dirname, '/public', 'favicon.ico')));
 
 //导入自定义模块位置
 var routers_index = require('./routes/index');
+
 //端口
 app.set('port', process.env.PORT || 3005);
 
