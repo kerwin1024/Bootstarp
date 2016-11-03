@@ -29,7 +29,7 @@ app.set('view engine', 'hbs');
 
 
 //引入fs
-
+var fs = require('fs');
 //引入body-parser解析表单
 // app.use(require('body-parser')());
 var bodyParser = require('body-parser');    //老师的
