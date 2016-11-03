@@ -1,0 +1,21 @@
+{
+  "name": "bootsobj",
+  "description": "Bootstrap",
+  "main": "index.js",
+  "authors": [
+    "Kerwin"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Bootstrap"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
