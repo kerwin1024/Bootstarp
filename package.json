@@ -7,10 +7,13 @@
     "test": "mocha"
   },
   "keywords": [
-    "Bootstrap"
+    "Bootstrap",
+    "kerwin",
+    "kerwin1024"
   ],
   "author": "Kerwin",
   "license": "MIT",
+  "repository": "https://github.com/kerwin1024/Bootstarp.git",
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
@@ -18,5 +21,7 @@
     "fs": "0.0.1-security",
     "serve-favicon": "^2.3.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "express-handlebars": "^3.0.0"
+  }
 }
