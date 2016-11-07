@@ -14,38 +14,61 @@
     <meta name="viewport" content="width=device-width">
     {{{_sections.head}}}
     <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="stylesheets/main.css">
+    <!--<link rel="stylesheet" href="stylesheets/main.css">-->
 </head>
 
 <body>
-<header class="x_header">
-    <div class="container navbar x_navbar">
-        <div class="row text-center">
-            <div class="navbar-header col-lg-4">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
-                    <span class="sr-only">切换导航</span>
-                    <span class="icon-bar">——</span>
-                    <span class="icon-bar">——</span>
-                    <span class="icon-bar">——</span>
-                </button>
-                <!--logo-->
-                <div class="navbar-brand">
-                    <img src="" alt="logo">
-                </div>
-            </div>
-            <!--导航-->
-            <div class="col-md-8 collapse navbar-collapse x-nav" id="example-navbar-collapse">
-                <ul class="list-unstyled nav navbar-nav x_navbar_ul">
-                    <li class=""><a href="">首页</a></li>
-                    <li class=""><a href="">新品推荐</a></li>
-                    <li class=""><a href="">产品列表</a></li>
-                    <li class=""><a href="">服务条款</a></li>
-                    <li class=""><a href="">联系我们</a></li>
-                </ul>
-            </div>
+<!--<header class="x_header navbar-fixed-top">-->
+    <!--<div class="container navbar x_navbar">-->
+        <!--<div class="row text-center">-->
+            <!--<div class="navbar-header col-lg-4">-->
+                <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">-->
+                    <!--<span class="sr-only">切换导航</span>-->
+                    <!--<span class="icon-bar">——</span>-->
+                    <!--<span class="icon-bar">——</span>-->
+                    <!--<span class="icon-bar">——</span>-->
+                <!--</button>-->
+                <!--&lt;!&ndash;logo&ndash;&gt;-->
+                <!--<div class="navbar-brand">-->
+                    <!--<img src="" alt="logo">-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;导航&ndash;&gt;-->
+            <!--<div class="col-md-8 collapse navbar-collapse x-nav" id="example-navbar-collapse">-->
+                <!--<ul class="list-unstyled nav navbar-nav x_navbar_ul">-->
+                    <!--<li class=""><a href="">首页</a></li>-->
+                    <!--<li class=""><a href="">新品推荐</a></li>-->
+                    <!--<li class=""><a href="">产品列表</a></li>-->
+                    <!--<li class=""><a href="">服务条款</a></li>-->
+                    <!--<li class=""><a href="">联系我们</a></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</header>-->
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container row">
+        <div class="navbar-header col-md-4">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse"data-target="#navbar" aria-controls="navbar" aria-expanded="false">
+                <span class="sr-only">n</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="text-center">LOGO</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse col-md-8">
+            <ul class="nav navbar-nav col-md-12 text-center">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">新品推荐</a></li>
+                <li><a href="#">产品列表</a></li>
+                <li><a href="#">服务条款</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
         </div>
     </div>
-</header>
+</nav>
 {{{body}}}
 
 <footer>
