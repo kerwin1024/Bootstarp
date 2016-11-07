@@ -27,6 +27,7 @@ var handlebars = require('express-handlebars').create({
         static: function (name) {
             return require('./lib/static.js').map(name);
         },
+        //声明section函数
         section: function (name, options) {
             if (!this._sections) this._sections = {};
             this._sections[name] = options.fn(this);
@@ -54,6 +55,14 @@ var routers_index = require('./routes/index');
 //设置端口
 app.set('port', process.env.PORT || 3005);
 
+//中间件（局部文件）
+app.use(function (req,res,next) {
+    if(!res.locals.partials) res.locals.partials = {};
+    res.locals.partials.discountContext = {
+        locations: [{product: 'book',price: '99.00'}]
+    };
+    next();
+});
 
 //设置路由（根目录为上面定义的routers_index）
 app.use('/', routers_index);

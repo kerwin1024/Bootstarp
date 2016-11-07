@@ -1,0 +1,15 @@
+.x_header{
+    background: #000000;
+    height:100px;
+}
+.x_navbar div div{
+
+    height:100px;
+}
+.x_navbar{
+    background: #000000;
+    height:100px;
+}
+.x_navbar_ul li a{
+    color: white;
+}

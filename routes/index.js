@@ -18,7 +18,17 @@ router.get('/contact',function (req,res,next) {
 
 /*about page*/
 router.get('/about',function (req,res,next) {
-    res.renvder("about");
+    res.render("about");
+});
+
+/*test form*/
+router.get('/testform',function(req,res,next){
+    res.render("testform");
+});
+
+/*customjs*/
+router.get('/customjs',function(req,res,next){
+    res.render("customjs");
 });
 
 module.exports = router;

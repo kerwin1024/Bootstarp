@@ -2,40 +2,78 @@
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-    <title>Sprint Bootstrap Website Design</title>
+    <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+    <title>mybird</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.min.css">
-
+    {{{_sections.head}}}
+    <link rel="stylesheet" href="/vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 
 <body>
-<header class="container">
-    <div class="row">
-        <div class="col-md-2 col-xs-12">
-            <img src="/images/1.gif" alt="logo">
+<header class="x_header">
+    <div class="container navbar x_navbar">
+        <div class="row text-center">
+            <div class="navbar-header col-lg-4">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-navbar-collapse">
+                    <span class="sr-only">切换导航</span>
+                    <span class="icon-bar">——</span>
+                    <span class="icon-bar">——</span>
+                    <span class="icon-bar">——</span>
+                </button>
+                <!--logo-->
+                <div class="navbar-brand">
+                    <img src="" alt="logo">
+                </div>
+            </div>
+            <!--导航-->
+            <div class="col-md-8 collapse navbar-collapse x-nav" id="example-navbar-collapse">
+                <ul class="list-unstyled nav navbar-nav x_navbar_ul">
+                    <li class=""><a href="">首页</a></li>
+                    <li class=""><a href="">新品推荐</a></li>
+                    <li class=""><a href="">产品列表</a></li>
+                    <li class=""><a href="">服务条款</a></li>
+                    <li class=""><a href="">联系我们</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="col-md-5 col-xs-12">
-            <h1>齐天大圣 <small>孙悟空</small></h1>
-        </div>
-        <div class="col-md-1 col-xs-12">home0</div>
-        <div class="col-md-1 col-xs-12">home1</div>
-        <div class="col-md-1 col-xs-12">home2</div>
-        <div class="col-md-1 col-xs-12">home3</div>
-        <div class="col-md-1 col-xs-12">home4</div>
     </div>
 </header>
 {{{body}}}
+
 <footer>
-    <div>
-        footer很丰富
-        <p>footer很丰富footer很丰富footer很丰富footer很丰富footer很丰富footer很丰富footer很丰富footer很丰富footer很丰富footer很丰富footer很丰富footer很丰富footer很丰富</p>
-    </div>
+    <!--newsletter-->
+    <section class="footer-primary">
+        <div class="container">
+            <h1>邮件订阅</h1>
+            <p>订阅邮件，更多优惠等你来！</p>
+            <form action="" method="post">
+                <div>
+                    <label for="">出生日期
+                        <em>*</em>
+                    </label>
+                    <input type="date" placeholder="年-月-日" name="birth">
+                </div>
+                <div>
+                    <label for="">邮箱
+                        <em>*</em>
+                    </label>
+                    <input type="date" placeholder="red@birds.com" name="email">
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--关于我们-->
+    <section class="footer-secondry"></section>
+    <!--版权-->
+    <section class="footer-terriary"></section>
 </footer>
 <script src="/vendor/jquery/dist/jquery.min.js"></script>
 <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
