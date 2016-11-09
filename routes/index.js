@@ -31,4 +31,10 @@ router.get('/customjs',function(req,res,next){
     res.render("customjs");
 });
 
+/*mybird*/
+router.get('/mybird',function(req,res,next){
+    res.render("mybird");
+});
+
+
 module.exports = router;

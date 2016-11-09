@@ -28,7 +28,7 @@ var handlebars = require('express-handlebars').create({
             return require('./lib/static.js').map(name);
         },
         //声明section函数
-        section: function (name, options) {
+            section: function (name, options) {
             if (!this._sections) this._sections = {};
             this._sections[name] = options.fn(this);
             return null;
