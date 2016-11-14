@@ -6754,4 +6754,8 @@ button.close {
     display: none !important;
   }
 }
+.test-bg {
+  color: red;
+  background-image: url("/images/min.jpg");
+}
 /*# sourceMappingURL=bootstrap.css.map */

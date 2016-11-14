@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="App">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Angular-Demo</title>
+</head>
+<body>
+<!--no-model 双向数据绑定-->
+<input type="text" ng-model="name" placeholder="name" name="">
+<h1>Hello {{ name }}</h1>
+
+<div ng-controller="MyController">
+    {{ clock }}
+    <input type="checkbox" ng-model="person.name" placeholder="name" name="">
+    <h1>{{ person.name }}</h1>
+</div>
+
+<script src="vendor/angular/angular.min.js"></script>
+<script src="javasctipts/app.js"></script>
+</body>
+</html>

@@ -155,13 +155,19 @@ module.exports = function (grunt) {
     less: {
       compileCore: {
         options: {
+          //添加自定义函数static，导入lib中的方法
+            customFunctions:{
+                static: function(lessObject,name){
+                    return 'url("' + require('../../../lib/static').map(name.value) + '")';
+                }
+            },
           strictMath: true,
           sourceMap: true,
           outputSourceFiles: true,
           sourceMapURL: '<%= pkg.name %>.css.map',
           sourceMapFilename: 'dist/css/<%= pkg.name %>.css.map'
         },
-        src: 'less/bootstrap.less',
+        src: ['less/bootstrap.less','../../../less/main.less'],
         dest: 'dist/css/<%= pkg.name %>.css'
       },
       compileTheme: {
