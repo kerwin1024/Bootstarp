@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en" ng-app="firstA">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div ng-controller="FirstController">
+    <input type="text" ng-model="first">
+    <input type="text" ng-model="last">
+    <button ng-click="updateMessage()">message</button>
+    <p>{{heading+message}}</p>
+</div>
+
+
+<div>
+    <button></button>
+</div>
+
+<script src="vendor/angular/angular.min.js"></script>
+<script src="javasctipts/firstA.js"></script>
+</body>
+</html>

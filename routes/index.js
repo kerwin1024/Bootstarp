@@ -35,6 +35,9 @@ router.get('/customjs',function(req,res,next){
 router.get('/mybird',function(req,res,next){
     res.render("mybird");
 });
-
+/*angular*/
+router.get('/angular',function(req,res,next){
+    res.render("angular",{fromjs:'This is server JS'});
+})
 
 module.exports = router;
