@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en" ng-app="notesApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<!--实例化控制器，as-->
+<body ng-controller="MainCtrl as ctrl">
+
+
+<button ng-click="ctrl.changeMe()">CHANGE</button>
+
+<div ng-repeat="note in ctrl.notes">
+    Without Bind Once:
+    <div class="label" ng-bind="note.label"></div>
+    With Bind Once:
+    <div class="label" ng-bind="note.done"></div>
+</div>
+<script src="/vendor/angular/angular.min.js"></script>
+<script src="/javasctipts/ngbind.js"></script>
+</body>
+</html>

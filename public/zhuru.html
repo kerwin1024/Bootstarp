@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div  ng-app="notesApp">
+    <div  ng-controller="MainCtrl">
+        {{log}}
+    </div>
+</div>
+
+
+
+<div ng-app="myMod">
+    <div ng-controller="MyModCtrlB">
+        {{message}}
+        <p ng-bind="message"></p>
+    </div>
+
+</div>
+
+
+
+<div ng-app="myApp">
+    <div ng-controller="MyAppCtrlA">
+        {{message}}
+    </div>
+</div>
+
+<script src="vendor/angular/angular.min.js"></script>
+<script src="javasctipts/zhuru.js"></script>
+</body>
+</html>

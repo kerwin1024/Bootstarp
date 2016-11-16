@@ -19,6 +19,7 @@
     "express": "^4.14.0",
     "express-handlebars": "^3.0.0",
     "fs": "0.0.1-security",
+    "ng-table": "^2.1.0",
     "serve-favicon": "^2.3.0"
   },
   "devDependencies": {

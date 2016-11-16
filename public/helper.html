@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en" ng-app="notesApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-controller="MainCtrl as ctrl">
+    <div ng-repeat="note in ctrl.notes">
+        <div>First Element:{{$first}}</div>
+        <div>Midddle Element:{{$middle}}</div>
+        <div>last Element:{{$last}}</div>
+        <div>Index Element:{{$index}}</div>
+        <div>At Element:{{$even}}</div>
+        <div>At Odd Element:{{$odd}}</div>
+        <span class="label">{{note.label}}</span>
+        <span class="status" ng-bind="note.done"></span>
+        <hr>
+    </div>
+
+    <script src="/vendor/angular/angular.min.js"></script>
+    <script src="/javasctipts/helper.js"></script>
+</body>
+</html>
