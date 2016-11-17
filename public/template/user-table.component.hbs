@@ -3,11 +3,23 @@
        class="table table-condensed table-bordered"
 >
     <tr ng-repeat="user in $data">
-        <td data-title="'Name'" header-class="'text-left'" sortable="'name'" filter="{'name':'text'}">
-            {{user.name}}
+        <td data-title="'姓名'" hander-class="'text-right'" sortable="'name'" filter="{'realName':'text'}">
+            {{user.realName}}
         </td>
-        <td data-title="'Age'" header-class="'text-right" sortable="'age'" filter="{'age':'text'}">
-            {{user.age}}
+        <td data-title="'职位'" hander-class="'text-right" sortable="'title'" filter="{'title':'text'}">
+            {{user.title}}
+        </td>
+        <td data-title="'地址'" hander-class="'text-right" sortable="'address'" filter="{'address':'text'}">
+            {{user.address}}
+        </td>
+        <td data-title="'电话'" hander-class="'text-right" sortable="'phone'" filter="{'phone':'text'}">
+            {{user.phone}}
+        </td>
+        <td data-title="'邮箱'" hander-class="'text-right" sortable="'email'" filter="{'email':'text'}">
+            {{user.email}}
+        </td>
+        <td data-title="'QQ'" hander-class="'text-right" sortable="'QQ'" filter="{'QQ':'text'}">
+            {{user.QQ}}
         </td>
     </tr>
 </table>

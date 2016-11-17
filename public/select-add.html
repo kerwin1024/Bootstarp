@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" ng-app="provinceApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>provinceApp</title>
+</head>
+<body ng-controller="ProCtrl as ctrl">
+
+<select ng-repeat="city in ctrl.province">
+    <option  ng-bind="city.provinceName"></option>
+</select>
+<select>
+    <option ng-repeat="xx in province.county" ng-bind="xx.county"></option>
+</select>
+
+<script src="vendor/angular/angular.min.js"></script>
+<script src="javasctipts/select-add.js"></script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<div ng-controller="ProvinceCtrl as ctrl">
+    <select name="province" id="province" ng-model="selectPro" ng-options="proRows.label for proRows in ctrl.province"
+            ng-change="ctrl.getCity(selectPro)">
+        <option value="">==省份==</option>
+    </select>
+    <select name="city" id="city" ng-model="selectCity"
+            ng-options="cityRows.cityName for cityRows in ctrl.cityArr" ng-change="ctrl.consoleMsg(selectCity)">
+        <option value="">==城市==</option>
+    </select>
+</div>
+
+<script src="vendor/angular/angular.min.js"></script>
+<script src="javascriptslect.js"></script>
+<script>
+    /**
+     * Created by Nuo on 2016/11/17.
+     */
+    var app = angular.module("myApp", []);
+    app.controller("ProvinceCtrl", [function () {
+        var self = this;
+        self.province = [
+            {
+                value: 0,
+                label: "山东",
+                city:[
+                    {value:001, cityName:"济南市"},
+                    {value:002, cityName:"青岛市"},
+                    {value:003, cityName:"淄博市"},
+                    {value:004, cityName:"枣庄市"},
+                    {value:005, cityName:"东营市"},
+                    {value:006, cityName:"烟台市"},
+                    {value:007, cityName:"潍坊市"},
+                    {value:008, cityName:"济宁市"},
+                    {value:009, cityName:"泰安市"},
+                    {value:010, cityName:"威海市"},
+                    {value:011, cityName:"日照市"},
+                    {value:012, cityName:"滨州市"},
+                    {value:013, cityName:"德州市"},
+                    {value:014, cityName:"聊城市"},
+                    {value:015, cityName:"临沂市"},
+                    {value:016, cityName:"菏泽市"},
+                    {value:017, cityName:"莱芜市"}
+                ]
+            },
+            {
+                value: 1,
+                label: "四川",
+                city:[
+                    {value:101, cityName:"成都市"},
+                    {value:102, cityName:"绵阳市"},
+                    {value:103, cityName:"自贡市"},
+                    {value:104, cityName:"攀枝花市"},
+                    {value:105, cityName:"泸州市"},
+                    {value:106, cityName:"德阳市"},
+                    {value:107, cityName:"广元市"},
+                    {value:108, cityName:"遂宁市"},
+                    {value:109, cityName:"内江市"},
+                    {value:110, cityName:"乐山市"},
+                    {value:111, cityName:"资阳市"},
+                    {value:112, cityName:"宜宾市"},
+                    {value:113, cityName:"南充市"},
+                    {value:114, cityName:"达州市"},
+                    {value:115, cityName:"雅安市"},
+                    {value:116, cityName:"阿坝藏族羌族自治州"},
+                    {value:117, cityName:"甘孜藏族自治州"},
+                    {value:118, cityName:"凉山彝族自治州"},
+                    {value:119, cityName:"广安市"},
+                    {value:120, cityName:"巴中市"},
+                    {value:121, cityName:"眉山市"}
+                ]
+            }
+        ];
+        self.getCity = function (value) {
+            self.cityArr = value.city || null;
+        };
+        self.consoleMsg = function (value) {
+            console.log(value);
+        };
+    }]);
+
+</script>
+</body>
+<html>
