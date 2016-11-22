@@ -55,6 +55,9 @@ var routers_index = require('./routes/index');
 //设置端口
 app.set('port', process.env.PORT || 3005);
 
+//中间件bodyparser
+app.use(bodyParser());
+
 //中间件（局部文件）
 app.use(function (req,res,next) {
     if(!res.locals.partials) res.locals.partials = {};

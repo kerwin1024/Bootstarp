@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>dateShow</title>
+    <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css">
+</head>
+<body ng-controller="Ctrl as ctrl">
+<div>
+    <h1>相机列表</h1>
+    <tible>
+        <th>
+        <td>make</td>
+        <td>model</td>
+        <td>mp</td>
+        </th>
+        <tr ng-repeat="c in cameras" ng-model="model">
+            <td ng-bind="c.make"></td>
+            <td ng-bind="c.model"></td>
+            <td ng-bind="c.mp"></td>
+        </tr>
+    </tible>
+</div>
+
+<div>
+    <h1>相机列表</h1>
+    <p ng-repeat="(c,make) in cameras" ng-bind="make"></p>
+</div>
+<script src="vendor/angular/angular.min.js"></script>
+<!--<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>-->
+<script src="javasctipts/datelog.js"></script>
+</body>
+</html>

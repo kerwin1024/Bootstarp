@@ -1,0 +1,22 @@
+<div class="col-md-4 col-sm-6 col-xs-6">
+    <label for="">省份：</label>
+    <select class="form-control" ng-model="tmp.province" ng-options="province.provinceName for province in tmp.provinces">
+        <option value="">请选择省份-</option>
+    </select>
+</div>
+
+
+<div class="col-md-4 col-sm-6 col-xs-6" ng-if="tmp.province.city">
+    <label for="">市：</label>
+    <select class="form-control" ng-model="tmp.city" ng-options="city.cityName for city in tmp.province.city">
+        <option value="">选择市-</option>
+    </select>
+</div>
+
+
+<div class="col-md-4 col-sm-6 col-xs-6"  ng-if="tmp.city.county">
+    <label for="">区/县：</label>
+    <select class="form-control" ng-model="tmp.county" ng-options="county.countyName for county in tmp.city.county">
+        <option value="">选择区/县-</option>
+    </select>
+</div>

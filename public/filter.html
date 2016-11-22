@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-controller="MyCtrl as ctrl">e
+<p ng-bind="name"></p>
+<p>{{123.46 | currency:'USD'}}</p>
+
+<input type="text" ng-model="msg">
+<p>{{"Some ext xxx 123 number" | filter:"number"}}</p>
+<p>{{['Ari','xiao','kang',"ll"] | filter:'x'}}</p>
+
+<p>{{['Ari','xiao','kang',"ll"] | limitTo:3}}</p>
+
+<p>{{"Jan 1, 1972 8:00:00 AM" | date:'medium'}}</p>
+<p>{{"Jan 1, 1972 8:00:00 AM" | date:'short'}}</p>
+<p>{{2015 | date:'fullDate'}}</p>
+<p>{{2015 | date:'longDate'}}</p>
+<p>{{2015 | date:'mediumDate'}}</p>
+<p>{{2015 | date:'shortDate'}}</p>
+<p>{{2015 | date:'mediumTime'}}</p>
+<p>{{2015 | date:'sortTime'}}</p>
+<script src="vendor/angular/angular.min.js"></script>
+<script src="javasctipts/filter.js"></script>
+</body>
+</html>

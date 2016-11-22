@@ -43,4 +43,15 @@ router.get('/angular',function(req,res,next){
 router.get('/list',function(req,res,next){
     res.render("list");
 })
+router.post('/login',function(req,res,next){
+    var data={
+        mes:'Login successful for'+req.body.userName,user:req.body
+    };
+    res.send(data);
+})
+
+router.get('/detail',function(req,res,next){
+    res.render("detail");
+})
+
 module.exports = router;

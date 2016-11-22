@@ -65,11 +65,15 @@ var data = [
 
 angular.module('showBarrioApp', [])
     .constant('BarrioData', data)
-    .component('provinceSelect', {
-        templateUrl: 'template/province.hbs',
-        controller: 'showBarrioController'
-    })
-    // .value('BarrioData',data)
+    .value('BarrioData',data)
+
+    .directive('provinceSelect',[function () {
+        return {
+            restrict: 'AECM',//AECM
+            require: '^showBarrioController',
+            templateUrl: 'template/province.hbs'
+        }
+    }])
     .controller('showBarrioController', ['$scope', 'BarrioData', showBarrioController]);
 
 showBarrioController.$inject = ['$scope', 'BarrioData'];
@@ -92,12 +96,7 @@ function showBarrioController($scope, BarrioData) {
             templateUrl:'template/province.hbs'
         }
     }]);/*
-.directive('provinceSelect',[function () {
-        return {
-            restrict: 'AECM',//AECM
-            require: '^showBarricoController',
-            templateUrl: 'template/province.hbs'
-        }*/
+     */
 }
 
 angular.module('mainApp', ['showBarrioApp']);

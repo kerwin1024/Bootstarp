@@ -18,7 +18,21 @@
     <link rel="stylesheet" href="stylesheets/main.css">
 </head>
 
-<body data-spy="scroll" data-target="#myScrollspy">
+<body data-spy="scroll" data-target="#myScrollspy" ng-app="mainApp">
+<header>
+    <div class="container-fluid">
+        <ul class="list-wrap">
+            <li><a href="/main#signup">注册</a></li>
+            <li><a href="/main#login">登录</a></li>
+            <li><a href="/main#edit">编辑</a></li>
+            <li><a href="/list">列表</a></li>
+            <li><a href="/main#forgotpwd">忘记密码</a></li>
+        </ul>
+    </div>
+</header>
+<section class="container-fluid">
+    <div ng-view></div>
+</section>
 {{{body}}}
 
 <!--<header>
@@ -144,8 +158,10 @@
     </div>
 </footer>-->
 <script src="/vendor/jquery/dist/jquery.min.js"></script>
+<script src="vendor/angular/angular.min.js"></script>
+<script src="vendor/angular-route/angular-route.js"></script>
+<script src="javasctipts/singleapp.js"></script>
 <script src="/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="/vendor/angular/angular.min.js"></script>
 {{{_sections.customjs}}}
 {{{_sections.custom-angular-js}}}
 </body>

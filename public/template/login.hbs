@@ -1,0 +1,29 @@
+<div class=""
+     ng-controller="loginController as ctrl">
+    <form
+            name="loginForm"
+            method="post"
+            ng-submit="ctrl.login()">
+        <h1>Login</h1>
+        <div>
+            <input type="text"
+                   name="userName"
+                   placeholder="请输入用户名"
+                   ng-model="ctrl.user.userName"
+                   required>
+        </div>
+        <div>
+            <input type="password"
+                   name="password"
+                   placeholder="请输入密码"
+                   ng-model="ctrl.user.password"
+                   required><!--required必填项-->
+        </div>
+        <div>
+            <input type="submit"
+                   value="登录"
+                   ng-disabled="loginForm.$invalid"><!--invalid验证表单是否无效-->
+        </div>
+        <div ng-bind="ctrl.messageFull"></div>
+    </form>
+</div>
