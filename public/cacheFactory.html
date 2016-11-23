@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body ng-app="notesApp">
+<div ng-controller="MainCtrl as ctrl">
+    <h1>Factory</h1>
+    <input type="button"
+           value="Open First"
+           ng-model="open"
+           ng-click="ctrl.open('first')"
+           class="button">
+    <input type="button"
+           value="Open Second"
+           ng-click="ctrl.open('second')">
+    <p>{{ctrl.tab}}</p>
+    <div ng-switch on="ctrl.tab">
+        <div ng-controller="SubCtrl as sctrl">
+            <p ng-switch-when="first"></p>
+            <ul>
+                <li ng-repeat="item in sctrl.list()">
+                    <span ng-bind="item.label"></span>
+                </li>
+            </ul>
+            <button ng-click="sctrl.add()">ADD</button>
+        </div>
+    </div>
+    
+</div>
+
+<script src="vendor/jquery/dist/jquery.js"></script>
+<script src="vendor/angular/angular.min.js"></script>
+<script src="vendor/angular-route/angular-route.js"></script>
+<script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+<script src="javasctipts/cacheFactory.js"></script>
+</body>
+</html>
