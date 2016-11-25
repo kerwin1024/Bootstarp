@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var static = require('../lib/static.js');
 
 /*GET home page*/
 router.get('/', function (req, res, next) {
@@ -53,5 +54,14 @@ router.post('/login',function(req,res,next){
 router.get('/detail',function(req,res,next){
     res.render("detail");
 })
+
+
+router.get('/captcha', function (req, res) {
+    var svgCaptcha = require('svg-captcha');
+    var captcha = svgCaptcha.create({size:8});
+    req.session.captcha = captcha.text;
+    res.set('Content-Type', 'image/svg+xml');
+    res.status(200).send(captcha.data);
+});
 
 module.exports = router;

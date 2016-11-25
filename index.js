@@ -7,6 +7,37 @@ var app = express();
 //引入body-parser解析表单
 var bodyParser = require('body-parser');
 
+//mongo===credentials
+var credentials = require('./credentials.js');
+
+//cookie-parser
+app.use(require('cookie-parser')(credentials.cookieSecret));
+
+//express-session
+app.use(require('express-session')());
+
+//emailService
+var emailService = require('./lib/email.js')(credentials);
+
+//database configuration
+var mongoose = require('mongoose');
+
+var options = {
+    server: {
+        //保持数据库连接，避免重新登录
+        socketOptions: {keepAlive: 1}
+    }
+};
+switch (app.get('env')) {
+    case 'development':
+        mongoose.connect(credentials.mongo.development.connectionString, options);
+        break;
+    case 'production':
+        mongoose.connect(credentials.mongo.production.connectionString, options);
+        break;
+    default:
+        throw new Error('Unknow execution environment: ' + app.get('env'));
+}
 //path
 var path = require('path');
 
@@ -28,7 +59,7 @@ var handlebars = require('express-handlebars').create({
             return require('./lib/static.js').map(name);
         },
         //声明section函数
-            section: function (name, options) {
+        section: function (name, options) {
             if (!this._sections) this._sections = {};
             this._sections[name] = options.fn(this);
             return null;
@@ -58,11 +89,12 @@ app.set('port', process.env.PORT || 3005);
 //中间件bodyparser
 app.use(bodyParser());
 
+
 //中间件（局部文件）
-app.use(function (req,res,next) {
-    if(!res.locals.partials) res.locals.partials = {};
+app.use(function (req, res, next) {
+    if (!res.locals.partials) res.locals.partials = {};
     res.locals.partials.discountContext = {
-        locations: [{product: 'book',price: '99.00'}]
+        locations: [{product: 'book', price: '99.00'}]
     };
     next();
 });
@@ -74,7 +106,7 @@ app.use('/', routers_index);
 app.use(function (req, res) {
     res.status(404);
     //不使用布局
-    res.render('errors/404',{layout:null});
+    res.render('errors/404', {layout: null});
 });
 
 //定制500页面

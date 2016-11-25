@@ -30,7 +30,12 @@ angular.module('singleApp', ['ngRoute'])
     //注册
 .controller('signupController',[function () {
     var self = this;
-    self.message='注册'
+    self.message='注册';
+    self.captchaUrl = '/captcha';
+    self.change = function () {
+        self.captchaUrl = '/captcha?t='+Math.random();
+        // $("#captcha").attr('src',self.captchaUrl+Math.random());
+    };
 }])
     //登录
     .controller('loginController',['$http',function ($http) {
@@ -70,3 +75,4 @@ angular.module('singleApp', ['ngRoute'])
         }
     }]);
 angular.module('mainApp',['singleApp']);
+
